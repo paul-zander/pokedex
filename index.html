@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="shortcut icon" href="./img/pokeball-background.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+    <script defer src="get-data.js"></script>
+    <script defer src="script.js"></script>
+    <script defer src="templates.js"></script>
+    <script defer src="set-colors.js"></script>
+</head>
+<body onload="start();">
+    <div id="loading-screen">
+        <div class="loader">
+            <img class="pokeball-loader" src="./img/pokeball-background.png" alt="">
+        </div>
+        <p>Loading...</p>
+    </div>
+    <div onclick="toggleModal()" id="modal-overlay" class="modal-overlay d-none">
+        
+        <div onclick="doNotClose(event)" id="modal-content" class="modal-content">
+            
+        </div>
+    </div>
+    <header id="top">
+        
+        <img class="pokedex-img" src="./img/pokedex.png" alt="">
+        
+        <div class="generations">
+            <div class="gen" onclick="loadGen(172, 0, 151)">Generation 1</div>
+            <div class="gen" onclick="loadGen(251, 152, 251)">Generation 2</div>
+            <div class="gen" onclick="loadGen(386, 252, 385)">Generation 3</div>
+        </div>
+        <form class="search-pokemon" action="">
+            <input id="search-query" type="text" placeholder="Search pokemon...">
+        </form>
+        
+    </header>
+    <div id="container-pokemon"></div>
+    <a href="#top"><img id="scroll-up-btn" src="./img/scroll-up.png" class="scroll-up-btn" alt=""></a>
+</body>
+</html>
